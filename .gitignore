@@ -1,0 +1,42 @@
+# ---------- Gradle / build ----------
+# Sem "/" na frente de propósito: precisa pegar tanto /build (raiz) quanto
+# /app/build (módulo) — o .gitignore antigo só ignorava a raiz e deixava o
+# build/ do módulo :app (KSP, APKs de debug etc.) passar direto pro commit.
+build/
+.gradle/
+.kotlin/
+*.apk
+*.aab
+*.ap_
+*.dex
+bin/
+gen/
+out/
+
+# ---------- Configuração local (específica desta máquina, nunca comitar) ----------
+local.properties
+
+# ---------- Credenciais / segredos — NUNCA comitar ----------
+app/google-services.json
+google-services.json
+*.jks
+*.keystore
+key.properties
+
+# ---------- Android Studio / IntelliJ ----------
+*.iml
+.idea/
+
+# ---------- Claude Code ----------
+# settings.local.json guarda permissões/preferências locais desta máquina —
+# settings.json (se um dia existir, compartilhado com o time) continua indo pro commit.
+.claude/settings.local.json
+
+# ---------- Nativo / NDK ----------
+.externalNativeBuild/
+.cxx/
+captures/
+
+# ---------- Diversos ----------
+*.log
+.DS_Store
